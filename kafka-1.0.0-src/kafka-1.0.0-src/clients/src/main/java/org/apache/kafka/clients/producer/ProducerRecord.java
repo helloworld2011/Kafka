@@ -121,7 +121,7 @@ public class ProducerRecord<K, V> {
     }
     
     /**
-     * Create a record to be sent to Kafka
+     * Create a record to be sent to Kafka 
      * 
      * @param topic The topic the record will be appended to
      * @param key The key that will be included in the record

@@ -23,7 +23,7 @@ public class KafkaConsumerProducerDemo {
         producerThread.start();      
 
        Consumer consumerThread = new Consumer(KafkaProperties.TOPIC);
-        //consumerThread.start();
+//       consumerThread.start();
 
     }
 }
