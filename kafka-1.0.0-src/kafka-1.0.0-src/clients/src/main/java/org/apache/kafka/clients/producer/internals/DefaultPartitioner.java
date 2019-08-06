@@ -41,18 +41,19 @@ public class DefaultPartitioner implements Partitioner {
 
     public void configure(Map<String, ?> configs) {}
 
-    /**
-     * Compute the partition for the given record.
+    /** 
+     * Compute the partition for the given record.  计算给定消息要发送到那个分区
      *
-     * @param topic The topic name
-     * @param key The key to partition on (or null if no key)
-     * @param keyBytes serialized key to partition on (or null if no key)
-     * @param value The value to partition on or null
-     * @param valueBytes serialized value to partition on or null
-     * @param cluster The current cluster metadata
+     * @param topic The topic name    
+     * @param key The key to partition on (or null if no key)  消息键值
+     * @param keyBytes serialized key to partition on (or null if no key)  消息键值字节数组
+     * @param value The value to partition on or null  消息体
+     * @param valueBytes serialized value to partition on or null 消息字节数组
+     * @param cluster The current cluster metadata  集体元数据
      */
     public int partition(String topic, Object key, byte[] keyBytes, Object value, byte[] valueBytes, Cluster cluster) {
-        List<PartitionInfo> partitions = cluster.partitionsForTopic(topic);
+       //计算分区
+    	List<PartitionInfo> partitions = cluster.partitionsForTopic(topic);
         int numPartitions = partitions.size();
         if (keyBytes == null) {
             int nextValue = nextValue(topic);

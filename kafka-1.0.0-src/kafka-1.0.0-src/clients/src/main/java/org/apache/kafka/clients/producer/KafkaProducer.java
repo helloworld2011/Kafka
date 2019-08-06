@@ -644,8 +644,9 @@ public class KafkaProducer<K, V> implements Producer<K, V> {
         sender.wakeup();
         result.await();
     }
-
-    /**
+    
+    // 异步回调
+    /** 
      * Asynchronously send a record to a topic. Equivalent to <code>send(record, null)</code>.
      * See {@link #send(ProducerRecord, Callback)} for details.
      */

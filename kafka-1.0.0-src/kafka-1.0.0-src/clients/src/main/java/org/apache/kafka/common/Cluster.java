@@ -39,7 +39,7 @@ public final class Cluster {
     private final Set<String> internalTopics;
     private final Node controller;
     private final Map<TopicPartition, PartitionInfo> partitionsByTopicPartition;  //TopicPartiton与Partition的映射关系
-    private final Map<String, List<PartitionInfo>> partitionsByTopic;
+    private final Map<String, List<PartitionInfo>> partitionsByTopic;   //存储 topic 与分区的信息
     private final Map<String, List<PartitionInfo>> availablePartitionsByTopic; //
     private final Map<Integer, List<PartitionInfo>> partitionsByNode; //记录node与PartitionInfo的关系 可以按照id来查询
     private final Map<Integer, Node> nodesById;//BrokerId与Node映射关系

@@ -37,7 +37,8 @@ public class StringSerializer implements Serializer<String> {
         if (encodingValue != null && encodingValue instanceof String)
             encoding = (String) encodingValue;
     }
-
+    
+    // 把String序列化成 二进制字节数组
     @Override
     public byte[] serialize(String topic, String data) {
         try {

@@ -23,7 +23,7 @@ public class IntegerSerializer implements Serializer<Integer> {
     public void configure(Map<String, ?> configs, boolean isKey) {
         // nothing to do
     }
-
+    
     public byte[] serialize(String topic, Integer data) {
         if (data == null)
             return null;
